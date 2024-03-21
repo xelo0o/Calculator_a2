@@ -40,6 +40,7 @@ body{
     text-wrap: wrap;
     word-break: break-all;
     max-height: 70%;
+    min-height: 1.5em;
 }
 
 .calculatorBtn{

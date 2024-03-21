@@ -12,11 +12,166 @@ const equalButton = document.querySelector('[data-equal]');
 const periodButton = document.querySelector('[data-period');
 
 //values
-let numberOne = displayBottom.textContent;
-let numberTwo = displayTop.textContent;
-let result = 0;
+let input = "";
+let operator = "";
+let currentNumber ="";
+let secondNumber = "";
 
 
+let add = (a,b)=>{
+    return a + b;
+}
+
+let subtract = (a,b)=>{
+    return a - b;
+}
+
+let multiply = (a,b)=>{
+    return a * b;
+}
+
+let divide = (a,b)=>{
+    return a / b;
+}
+/*
+switch(operator){
+    case '+':
+        a + b;
+        break;
+
+    case '-':
+        a - b;
+        break;
+
+    case '*':
+        a * b;
+        break;
+}
+
+*/
+// add event listener to all number buttons
+numberButtons.forEach((element)=>{    
+    element.addEventListener('click', ()=>{
+        currentNumber += element.textContent;
+        displayBottom.textContent = currentNumber;
+    })
+})
+
+// add event listener to operand buttons
+
+operandButtons.forEach((element)=>{
+    element.addEventListener('click', ()=>{
+        secondNumber = `${currentNumber} ${element.textContent}`;
+        currentNumber= '';
+        displayBottom.textContent = currentNumber;
+        displayTop.textContent = secondNumber;
+
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 //append number to end of Display text
 let appendNumber = (element)=>{
     numberOne = numberOne + (element.textContent );
@@ -91,4 +246,4 @@ console.log(numberOne);
 
 
 
-
+*/
