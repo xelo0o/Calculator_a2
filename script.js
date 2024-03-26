@@ -14,59 +14,128 @@ const periodButton = document.querySelector('[data-period');
 //values
 let input = "";
 let operator = "";
-let currentNumber ="";
+let firstNumber ="";
 let secondNumber = "";
+let result = '';
 
 
-let add = (a,b)=>{
-    return a + b;
+    
+const operate = op =>{
+    if(op == '+') return +firstNumber + +secondNumber;
+    if(op == '−') return +firstNumber - +secondNumber;
+    if(op == '×') return +firstNumber * +secondNumber;
+    if(op == '÷') return +firstNumber / +secondNumber;
 }
 
-let subtract = (a,b)=>{
-    return a - b;
-}
+//add event listener to all number buttons
+numberButtons.forEach((element)=>{
 
-let multiply = (a,b)=>{
-    return a * b;
-}
-
-let divide = (a,b)=>{
-    return a / b;
-}
-/*
-switch(operator){
-    case '+':
-        a + b;
-        break;
-
-    case '-':
-        a - b;
-        break;
-
-    case '*':
-        a * b;
-        break;
-}
-
-*/
-// add event listener to all number buttons
-numberButtons.forEach((element)=>{    
     element.addEventListener('click', ()=>{
-        currentNumber += element.textContent;
-        displayBottom.textContent = currentNumber;
+        
+        input += element.textContent;
+        displayBottom.textContent = `${firstNumber} ${operator} ${input}`;
+        
+    })    
+})
+
+//add event listener to operand buttons
+operandButtons.forEach((element)=>{
+    element.addEventListener('click', ()=>{
+        //checks to see if value is only a decimal with no integers 
+        if(input == '.') return;
+        //checks to see if input had value
+        if(input == '') return;
+
+
+
+    
+
+
+        //assigning values to variables
+        operator = element.textContent;
+        firstNumber = input;
+
+        input = '';
+        secondNumber = input;
+        displayBottom.textContent = `${firstNumber} ${operator} ${input}`;
     })
 })
 
-// add event listener to operand buttons
+//check to which operand to use and solve.
+equalButton.addEventListener('click',()=>{
+    secondNumber = input;
+    input = '';
+    displayTop.textContent = `${firstNumber} ${operator} ${secondNumber}`;
+    result = operate(operator);
+    displayBottom.textContent = result;
+})
 
-operandButtons.forEach((element)=>{
-    element.addEventListener('click', ()=>{
-        secondNumber = `${currentNumber} ${element.textContent}`;
-        currentNumber= '';
-        displayBottom.textContent = currentNumber;
-        displayTop.textContent = secondNumber;
 
-    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Clear all values, new calculator
+allClearButton.addEventListener('click', ()=>{
+    input = "";
+    operator = "";
+    firstNumber ="";
+    secondNumber = "";
+    displayBottom.textContent = '';
+    displayTop.textContent = '';
+})
+
+
+
+// adds decimal to input. checks to only allow 1 decimal point
+periodButton.addEventListener('click',()=>{
+    if(input.includes('.')) return;
+    input += periodButton.textContent;
+    displayBottom.textContent = input;
+})
+
+
+
+//deleted the last number of input value;
+deleteButton.addEventListener('click', ()=>{
+    input = input.toString().split('').slice(0,-1).join('');
+    displayBottom.textContent = input;
 })
 
 
