@@ -102,6 +102,7 @@ periodButton.addEventListener('click', () =>{
 
 
 deleteButton.addEventListener('click', ()=>{
+    if(displayBottom.textContent = result) return;
     if(secondNumber !== ''){
         secondNumber = secondNumber.toString().split('').slice(0,-1).join('');
         displayValue = `${firstNumber} ${operator} ${secondNumber}`;
