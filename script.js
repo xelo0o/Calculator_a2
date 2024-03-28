@@ -1,6 +1,7 @@
 const displayTop = document.querySelector('#displayTop');
 const displayBottom = document.querySelector('#displayBottom');
 const buttonContainer = document.querySelector('#buttonContainer');
+const subtractButton = document.querySelector('[data-subtract]');
 
 //Select All
 const calculatorBtn = document.querySelectorAll('.calculatorBtn');
@@ -10,6 +11,7 @@ const allClearButton = document.querySelector('[data-clear]');
 const deleteButton = document.querySelector('[data-delete]');
 const equalButton = document.querySelector('[data-equal]');
 const periodButton = document.querySelector('[data-period');
+const negativePositive = document.querySelector('[data-negative]');
 
 
 let firstNumber='';
@@ -64,6 +66,7 @@ numberButtons.forEach((element)=>{
 
 operandButtons.forEach((element)=>{
     element.addEventListener('click',()=>{
+
         if(firstNumber == '.') return;
         if(firstNumber !== '' && result !== ''){
             firstNumber = result;
@@ -85,6 +88,19 @@ operandButtons.forEach((element)=>{
         displayBottom.textContent = displayValue;
     })
 })
+
+
+negativePositive.addEventListener('click', ()=>{
+    if(firstNumber !== '' && operator == ''){
+        firstNumber *= -1;
+        displayBottom.textContent = firstNumber;
+    }
+    if(operator !== '' && secondNumber !== ''){
+        secondNumber *= -1;
+        displayBottom.textContent = `${firstNumber} ${operator} ${secondNumber}`;
+    }
+})
+
 
 periodButton.addEventListener('click', () =>{
     if(displayBottom.textContent == result && displayTop.textContent) clear();
