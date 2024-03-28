@@ -32,7 +32,7 @@ const clear = ()=>{
 function operate(operator, a, b){
     switch(operator){
         case '+':
-            return 1*a + 1 *b;
+            return 1*a + 1*b;
         case '-':
             return 1*a - 1*b;
         case '×':
@@ -88,7 +88,7 @@ operandButtons.forEach((element)=>{
 
 periodButton.addEventListener('click', () =>{
     if(displayBottom.textContent == result && displayTop.textContent) clear();
-    if(secondNumber == ''){
+    if(secondNumber == '' && operator == ''){
         if(firstNumber.toString().includes('.')) return;
         firstNumber += periodButton.textContent;
         displayBottom.textContent = firstNumber;
