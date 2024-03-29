@@ -91,6 +91,8 @@ operandButtons.forEach((element)=>{
 
 
 negativePositive.addEventListener('click', ()=>{
+    if(displayBottom.textContent == result && displayTop.textContent) return;
+    if(firstNumber == '.' || secondNumber == '.')return;
     if(firstNumber !== '' && operator == ''){
         firstNumber *= -1;
         displayBottom.textContent = firstNumber;
