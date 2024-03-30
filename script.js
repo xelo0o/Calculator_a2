@@ -19,6 +19,7 @@ let secondNumber='';
 let operator='';
 let displayValue = ''
 let result = '';
+let displayAll = `${firstNumber} ${operator} ${secondNumber}`;
 
 const clear = ()=>{
     firstNumber= '';
@@ -73,10 +74,10 @@ operandButtons.forEach((element)=>{
             result = '';
             displayBottom.textContent = firstNumber;
         }
-        if(firstNumber == '') return;// fix for negative numbers
+        if(firstNumber == '') return;
         if(operator !== '' && secondNumber == '')return;
         if(operator !== ''){
-            displayTop.textContent = `${firstNumber} ${operator} ${secondNumber}`
+            displayTop.textContent = `${firstNumber} ${operator} ${secondNumber}`;
             result = operate(operator,firstNumber,secondNumber);
             firstNumber = result;
             secondNumber='';
