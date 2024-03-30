@@ -47,9 +47,9 @@ function operate(operator, a, b){
 
 
 numberButtons.forEach((element)=>{
+    
     element.addEventListener('click', ()=>{
         if(displayBottom.textContent == result && displayTop.textContent) clear();
-            
         //assigns value to secondNumber variable if the operator variable is NOT empty
         if(operator !== ''){
             secondNumber += element.textContent;

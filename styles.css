@@ -16,7 +16,7 @@ body{
 .calculatorContainer{
     background-color: rgb(255, 255, 255);
     width:500px;
-    height:750px;
+    min-height:750px;
 }
 
 .displayContainer{
@@ -24,7 +24,10 @@ body{
     flex-direction: column;
     justify-content: flex-end;
     align-items: end;
-    height:30%;
+    text-wrap: wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    min-height: 200px;
     padding:15px;
     background-color: #dfdfdf;
 
@@ -37,8 +40,6 @@ body{
 
 .displayBottom{
     font-size: 3em;
-    text-wrap: wrap;
-    word-break: break-all;
     max-height: 70%;
     min-height: 1.5em;
 }
@@ -58,7 +59,7 @@ body{
     grid-template-columns: repeat(4, minmax(100px, 1fr) ); 
     grid-template-rows: 5;
     grid-auto-flow: dense;
-    height: 70%;
+    height: 550px;
 
 }
 
