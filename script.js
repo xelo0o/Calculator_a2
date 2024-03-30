@@ -143,7 +143,7 @@ allClearButton.addEventListener('click', ()=>{
 })
 //MAKES IT DO MATH
 equalButton.addEventListener('click',()=>{
-    if(secondNumber == '') return;
+    if(secondNumber == '' || secondNumber == '.') return;
     displayTop.textContent = displayValue;
     result = operate(operator,firstNumber,secondNumber);
     displayBottom.textContent = result;
