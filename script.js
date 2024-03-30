@@ -146,6 +146,7 @@ equalButton.addEventListener('click',()=>{
     if(secondNumber == '' || secondNumber == '.') return;
     displayTop.textContent = displayValue;
     result = operate(operator,firstNumber,secondNumber);
+    displayTop.textContent = `${firstNumber} ${operator} ${secondNumber} =`
     displayBottom.textContent = result;
     firstNumber = result;
     secondNumber='';
