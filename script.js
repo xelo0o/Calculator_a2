@@ -2,16 +2,19 @@ const displayTop = document.querySelector('#displayTop');
 const displayBottom = document.querySelector('#displayBottom');
 const buttonContainer = document.querySelector('#buttonContainer');
 const subtractButton = document.querySelector('[data-subtract]');
-
-//Select All
-const calculatorBtn = document.querySelectorAll('.calculatorBtn');
-const numberButtons = document.querySelectorAll('[data-number]')
-const operandButtons = document.querySelectorAll('[data-operand]');
 const allClearButton = document.querySelector('[data-clear]');
 const deleteButton = document.querySelector('[data-delete]');
 const equalButton = document.querySelector('[data-equal]');
 const periodButton = document.querySelector('[data-period');
 const negativePositive = document.querySelector('[data-negative]');
+const footerText  = document.querySelector('#footerText');
+
+//Select All
+const calculatorBtn = document.querySelectorAll('.calculatorBtn');
+const numberButtons = document.querySelectorAll('[data-number]')
+const operandButtons = document.querySelectorAll('[data-operand]');
+
+const year = new Date().getFullYear();
 
 
 let firstNumber='';
@@ -20,6 +23,10 @@ let operator='';
 let displayValue = ''
 let result = '';
 let displayAll = `${firstNumber} ${operator} ${secondNumber}`;
+
+
+//footer text
+footerText.textContent = `Copyright © ${year} xelo`;
 
 const clear = ()=>{
     firstNumber= '';
@@ -155,3 +162,5 @@ equalButton.addEventListener('click',()=>{
     
     
 })
+
+
