@@ -62,8 +62,7 @@ body{
     display: grid;
     grid-template-columns: repeat(4, minmax(100px, 1fr) ); 
     grid-template-rows: 5;
-    grid-auto-flow: dense;
-    height: 550px;
+    height: 500px;
 
 }
 
