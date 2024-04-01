@@ -26,7 +26,7 @@ let displayAll = `${firstNumber} ${operator} ${secondNumber}`;
 
 
 //footer text
-footerText.textContent = `Copyright © ${year} xelo`;
+footerText.textContent = `xelo © ${year}`;
 
 const clear = ()=>{
     firstNumber= '';
